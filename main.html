@@ -44,7 +44,7 @@
                         <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" srcset="">
                         <h3>Pay Bill</h3>
                     </div>
-                    <div class="box border p-4 text-center rounded-sm">
+                    <div id="tra-box" class="box border p-4 text-center rounded-sm">
                         <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" srcset="">
                         <h3>Transiction</h3>
                     </div>
@@ -93,7 +93,7 @@
                                         <input value="01718830661" id="Account-number" type="number" class="input"
                                             placeholder="Type Account Number" required />
                                         <label class="fieldset-label">Amount Number</label>
-                                        <input value="" id="cashout-Amount-number" type="number" class="input"
+                                        <input value="" id="cashout-amount-number" type="number" class="input"
                                             placeholder="Type Amount" required />
                                         <label class="fieldset-label">PIN</label>
                                         <input value="1234" id="cashout-pin" type="text" class="input"
@@ -108,13 +108,22 @@
                         </div>
                     </div>
                 </section>
+                <section id="transection-history">
+                    <h1 class="text-3xl font bold text-red-500">Transection History</h1>
+                    <div id="tra-container">
+
+                    </div>
+
+                </section>
 
             </section>
 
         </header>
     </section>
-    <script src="./script/toggle.js"></script>
+    <script src="./utilities/function.js"></script>
+    <script src="./utilities/tgl.js"></script>
     <script src="./script/addmoney.js"></script>
+    <script src="./script/cashout.js"></script>
 </body>
 
 </html>

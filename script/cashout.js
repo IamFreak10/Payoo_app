@@ -1,23 +1,23 @@
 document
   .getElementById("cash-out-btn")
   .addEventListener("click", function (event) {
-    
-
-    // Get PIN and amount values
-    const pin = document.getElementById("cashout-pin").value;
-    const convertedPin = parseInt(pin);
-    const amount = document.getElementById("cashout-Amount-number").value; // Corrected ID
-    const convertedAmount = parseInt(amount);
-
-    // Get current balance
-    const mainBalance = document.getElementById("up-amount").innerText;
-    const convertedMainBalance = parseInt(mainBalance);
-
+    const cashOut = getInputValueByID("cashout-amount-number");
+    const pin = getInputValueByID("cashout-pin");
+    const mainBalance = getInnerTextByID("up-amount");
+    const account = document.getElementById("Account-number").value;
     // Check PIN validity
-    if (convertedPin === 1234) {
-      if (convertedAmount <= convertedMainBalance) {
-        const sum = convertedMainBalance - convertedAmount;
-        document.getElementById("up-amount").innerText = sum; // Update the balance
+    if (pin === 1234) {
+      if (cashOut <= mainBalance) {
+        const sum = mainBalance - cashOut;
+        setInnerTextByIDandValue("up-amount", sum); // Update the balance
+
+        const container = document.getElementById("tra-container");
+        const p = document.createElement("p");
+        p.innerText = `
+      cashout ${cashOut} from ${account} account
+      `;
+
+        container.appendChild(p);
       } else {
         alert("Insufficient funds");
       }
